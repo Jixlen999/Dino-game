@@ -19,7 +19,7 @@ function jump() {
 
 let isGameOver = false;
 let score = 0;
-let scoreDiv = document.getElementById("score");
+let scoreSpan = document.getElementById("score");
 let scoreUpgrade = false;
 
 let isAlive = setInterval(function () {
@@ -33,18 +33,17 @@ let isAlive = setInterval(function () {
 		window.getComputedStyle(cactus).getPropertyValue("left")
 	);
 
+	let cactusRight = parseInt(
+		window.getComputedStyle(cactus).getPropertyValue("right")
+	);
+
 	if (cactusLeft <= dinoLeft && cactusLeft > 0 && dinoBot <= 30) {
 		alert("Game Over");
 		!isGameOver;
 	}
-
-	// console.log(cactusLeft);
-	// console.log(dinoLeft - 10);
-	// if (cactusLeft >= dinoLeft - 12 && cactusLeft <= dinoLeft - 8) {
-	// 	score++;
-	//     if (scoreUpgrade) {
-	//         return
-	//     }
-	// 	scoreDiv.innerHTML = score;
-	// }
+	console.log(cactusRight);
+	if (cactusRight === 100) {
+		score++;
+		scoreSpan.innerHTML = score;
+	}
 }, 10);
