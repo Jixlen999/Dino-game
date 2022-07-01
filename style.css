@@ -1,56 +1,86 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #63a69d;
+}
+
 .game {
-    width: 600px;
-    height: 200px;
-    margin: auto;
-    border-bottom: 2px solid black;
+	width: 60vw;
+	height: 50vh;
+	margin: 0 auto;
+	border-bottom: 2px solid black;
+	position: relative;
 }
 
 #dino {
-    height: 50px;
-    width: 50px;
-    background-image: url(img/dino_main.png);
-    background-size: 50px 50px;
-    position: relative;
-    top: 150px;
+	height: 80px;
+	width: 50px;
+	background-image: url(img/rick/big/3.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right bottom;
+	position: absolute;
+	left: 120px;
+	bottom: 0;
+}
+
+.moving {
+	animation: rickMoves 0.2s infinite ease;
 }
 
 #cactus {
-    height: 40px;
-    width: 30px;
-    background-image: url(img/cactus.png);
-    background-size: 30px 40px;
-    position: relative;
-    top: 110px;
-    left: 570px;
-    animation: cactusMove 2s infinite linear;
+	height: 60px;
+	width: 100px;
+	background-image: url(img/mouse/bigmouse.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left bottom;
+	position: absolute;
+	right: 100px;
+	bottom: 0px;
+	animation: cactusMove 2s infinite linear;
 }
 
 @keyframes cactusMove {
-    0% {
-        left: 570px;
-    }
-    100% {
-        left: -30px;
-    }
+	0% {
+		right: 100px;
+	}
+	100% {
+		right: 100%;
+	}
 }
 
 .jump {
-    animation: jump 0.4s linear;
+	animation: jump 1s linear;
 }
+
 @keyframes jump {
-    0% {
-        top: 150px;
-    }
-    30% {
-        top: 130px;
-    }
-    50% {
-        top: 90px;
-    }
-    80% {
-        top: 130px;
-    }
-    100% {
-        top: 150px;
-    }
+	0% {
+		bottom: 0px;
+	}
+	30% {
+		bottom: 40x;
+	}
+	50% {
+		bottom: 80px;
+	}
+	80% {
+		bottom: 40px;
+	}
+	100% {
+		bottom: 0px;
+	}
+}
+
+@keyframes rickMoves {
+	0% {
+		background-image: url(img/rick/big/2.png);
+	}
+	100% {
+		background-image: url(img/rick/big/1.png);
+	}
 }
