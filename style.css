@@ -16,7 +16,7 @@ body {
 	position: relative;
 }
 
-#dino {
+#cucuber {
 	height: 80px;
 	width: 65px;
 	background-image: url(img/rick/big/3.png);
@@ -29,29 +29,7 @@ body {
 }
 
 .moving {
-	animation: rickMoves 0.2s infinite ease;
-}
-
-#cactus {
-	height: 60px;
-	width: 100px;
-	background-image: url(img/mouse/bigmouse.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: left bottom;
-	position: absolute;
-	right: 100px;
-	bottom: 0px;
-	animation: cactusMove 2s infinite linear;
-}
-
-@keyframes cactusMove {
-	0% {
-		right: 100px;
-	}
-	100% {
-		right: 100%;
-	}
+	animation: cucuberMoves 0.2s infinite ease;
 }
 
 .jump {
@@ -76,11 +54,36 @@ body {
 	}
 }
 
-@keyframes rickMoves {
+@keyframes cucuberMoves {
 	0% {
 		background-image: url(img/rick/big/2.png);
 	}
 	100% {
 		background-image: url(img/rick/big/1.png);
 	}
+}
+
+#mouse {
+	height: 60px;
+	width: 100px;
+	background-image: url(img/mouse/bigmouse.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left bottom;
+	position: absolute;
+	right: 100px;
+	bottom: 0px;
+	animation: mouseMove 2s infinite linear;
+}
+
+@keyframes mouseMove {
+	0% {
+		right: 100px;
+	}
+	100% {
+		right: 100%;
+	}
+}
+
+#score {
 }

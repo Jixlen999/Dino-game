@@ -1,19 +1,19 @@
-dino = document.getElementById("dino");
-cactus = document.getElementById("cactus");
-dino.classList.add("moving");
+cucuber = document.getElementById("cucuber");
+mouse = document.getElementById("mouse");
+cucuber.classList.add("moving");
 
 document.addEventListener("keydown", function (event) {
 	jump();
 });
 
 function jump() {
-	if (dino.classList != "jump") {
-		dino.classList.remove("moving");
-		dino.classList.add("jump");
+	if (cucuber.classList != "jump") {
+		cucuber.classList.remove("moving");
+		cucuber.classList.add("jump");
 	}
 	setTimeout(function () {
-		dino.classList.remove("jump");
-		dino.classList.add("moving");
+		cucuber.classList.remove("jump");
+		cucuber.classList.add("moving");
 	}, 1000);
 }
 
@@ -23,26 +23,26 @@ let scoreSpan = document.getElementById("score");
 let scoreUpgrade = false;
 
 let isAlive = setInterval(function () {
-	let dinoBot = parseInt(
-		window.getComputedStyle(dino).getPropertyValue("bottom")
+	let cucuberBot = parseInt(
+		window.getComputedStyle(cucuber).getPropertyValue("bottom")
 	);
-	let dinoLeft = parseInt(
-		window.getComputedStyle(dino).getPropertyValue("left")
+	let cucuberLeft = parseInt(
+		window.getComputedStyle(cucuber).getPropertyValue("left")
 	);
-	let cactusLeft = parseInt(
-		window.getComputedStyle(cactus).getPropertyValue("left")
-	);
-
-	let cactusRight = parseInt(
-		window.getComputedStyle(cactus).getPropertyValue("right")
+	let mouseLeft = parseInt(
+		window.getComputedStyle(mouse).getPropertyValue("left")
 	);
 
-	if (cactusLeft <= dinoLeft && cactusLeft > 0 && dinoBot <= 30) {
+	let mouseRight = parseInt(
+		window.getComputedStyle(mouse).getPropertyValue("right")
+	);
+
+	if (mouseLeft <= cucuberLeft && mouseLeft > 0 && cucuberBot <= 30) {
 		alert("Game Over");
 		!isGameOver;
 	}
-	console.log(cactusRight);
-	if (cactusRight === 100) {
+
+	if (mouseRight === 100) {
 		score++;
 		scoreSpan.innerHTML = score;
 	}
